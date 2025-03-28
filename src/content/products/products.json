@@ -1,38 +1,38 @@
 [
     {
-        "slug": "ml-1",
-        "title": "miel 1",
-        "description": "lla mejor miel del mundo dsad sad sa dsa dsad sad sad sad sad sa dsad sad sad sad sadsala mejor miel del mundo dsad sad sa dsa dsad sad sad sad sad sa dsad sad sad sad sadsa",
+        "slug": "ML750",
+        "title": "Miel Pura landak 750",
+        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
         "image_path": "ml-1.jpg",
-        "amount": "20.000",
+        "amount": "$45.000",
         "available": true,
         "cant": "750 gr"
     },
     {
-        "slug": "ml-2",
-        "title": "miel 1",
-        "description": "la mejor miel del mundo",
+        "slug": "ML700",
+        "title": "Miel Pura landak 700",
+        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
         "image_path": "ml-1.jpg",
-        "amount": "20.000",
+        "amount": "$42.000",
         "available": true,
-        "cant": "750 gr"
+        "cant": "700 gr"
     },
     {
-        "slug": "ml-2",
-        "title": "miel 1",
-        "description": "la mejor miel del mundo dsad sad sa dsa dsad sad sad sad sad sa dsad sad sad sad sadsa",
-        "image_path": "ml-1.jpg",
-        "amount": "20.000",
-        "available": true,
-        "cant": "750 gr"
+            "slug": "ML415",
+            "title": "Miel Pura landak 415",
+            "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
+            "image_path": "ml-1.jpg",
+            "amount": "$25.000",
+            "available": true,
+            "cant": "415 gr"
     },
     {
-        "slug": "ml-2",
-        "title": "miel 1",
-        "description": "la mejor miel del mundo",
+        "slug": "ML215",
+        "title": "Miel Pura landak 215",
+        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
         "image_path": "ml-1.jpg",
-        "amount": "20.000",
+        "amount": "$15.000",
         "available": true,
-        "cant": "750 gr"
+        "cant": "215 gr"
     }
 ]
