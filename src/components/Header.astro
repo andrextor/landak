@@ -3,7 +3,7 @@ import ContactButton from "../components/ContactButton.astro"
 ---
 
 <header
-  class='bg-[url(/images/paisaje.jpg)] bg-cover lg:h-screen'
+ id="home" class='bg-[url(/images/paisaje.jpg)] bg-cover lg:h-screen rounded-b-2xl'
 >
   <nav
     class='flex top-0 w-full px-6 py-4 md:z-50 md:fixed md:backdrop-blur-md md:font-semibold items-center md:px-12 max-md:flex-col md:flex-row sm:justify-center md:justify-between text-center bg-transparent md:py-4 text-white justify-items-center lg:text-lg'
@@ -16,9 +16,9 @@ import ContactButton from "../components/ContactButton.astro"
       />
     </div>
     <ul class='flex max-md:flex-col space-x-3 lg:space-x-8 items-center'>
-      <li class='hover:text-[#04303b] transition-all duration-300 ease-in-out'><a href='/'>Inicio</a></li>
-      <li class='hover:text-[#04303b] transition-all duration-300 ease-in-out'><a href='#services'>Productos</a></li>
-      <li class='hover:text-[#04303b] transition-all duration-300 ease-in-out'><a href='#solutions'>Nosotros</a></li>
+      <li class='hover:text-[#04303b] transition-all duration-300 ease-in-out'><a href='#home'>Inicio</a></li>
+      <li class='hover:text-[#04303b] transition-all duration-300 ease-in-out'><a href='#products'>Productos</a></li>
+      <li class='hover:text-[#04303b] transition-all duration-300 ease-in-out'><a href='#about'>Nosotros</a></li>
     </ul>
     <ContactButton />
   </nav>
@@ -41,11 +41,11 @@ import ContactButton from "../components/ContactButton.astro"
       el Cauca, entre los 1.500 y 1.800 msnm.
     </p>
 
-    <div class='flex flex-col gap-2 md:gap-4 md:pt-12 sm:flex-row pb-2 md:pb-0'>
+    <div class='flex flex-col gap-2 md:gap-4 md:pt-12 sm:flex-row pb-2 md:pb-8'>
       <a
-        href='#services'
+        href='#products'
         class='rounded-sm px-4 py-3 text-sm text-center font-normal bg-transparent border hover:border-[#82c75c] hover:bg-[#82c75c] border-white animation: transition-all duration-300 ease-in-out'
-        >Explora nuestros servicios</a
+        >Explora nuestros Productos</a
       >
       <a
         href='#contact'

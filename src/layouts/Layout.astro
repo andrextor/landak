@@ -2,6 +2,7 @@
  import './src/styles/global.css'
  import Footer from "../components/Footer.astro"
  import Header from "../components/Header.astro"
+
 ---
 
 <!doctype html>
@@ -14,11 +15,15 @@
 		<title>Finca Landak</title>
 	</head>
 	<body class="font-sans text-[#04303b] grid grid-flow-rows">
-    <Header/>
-		<main class="bg-white px-4">    
+    <div class="bg-[#04303b]">
+      <Header/>
+    </div>
+		<main class="bg-white">    
 			<slot />
 		</main>
-    <Footer />
+    <div class="bg-white">
+      <Footer />
+    </div>
   </body>
 </html>
 
