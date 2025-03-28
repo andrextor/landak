@@ -8,11 +8,11 @@ const productsData = await getCollection("products")
   id='products'
   class='flex flex-col items-center bg-[#04303b] text-white py-8 px-8 shadow-2xl'
 >
-  <h2>Nuestros Productos</h2>
-  <div class="grid grid-cols-3 mt-12">
+  <h2 class="text-[#82c75c] text-2xl">Nuestros Productos</h2>
+  <div class="grid grid-col mt-8 w-full items-center justify-center">
   {
     productsData.map((productEntity) => (
-      <div class='grid md:grid-flow-col md:justify-between gap-x-2'>
+      <div class='grid md:grid-flow-col md:justify-between gap-x-2 '>
            {productEntity.data.slice(0, 3).map((product) => (
                 <CardProduct
                     slug={product.slug}
