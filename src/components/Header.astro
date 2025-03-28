@@ -3,12 +3,12 @@ import ContactButton from "../components/ContactButton.astro"
 ---
 
 <header
- id="home" class='bg-[url(/images/paisaje.jpg)] bg-cover lg:h-screen rounded-b-2xl px-4'
+ id="home" class='bg-[url(/images/paisaje.jpg)] bg-cover lg:h-screen rounded-b-2xl'
 >
   <nav
     class='flex top-0 w-full px-6 py-4 md:z-50 md:fixed md:backdrop-blur-md md:font-semibold items-center md:px-12 max-md:flex-col md:flex-row sm:justify-center md:justify-between text-center bg-transparent md:py-4 text-white justify-items-center lg:text-lg'
   >
-    <div class='flex max-md:flex-col text-white'>
+    <div class='flex max-md:flex-col'>
       <img
         class='object-scale-down h-14 md:pr-8'
         src='/images/logo.png'
@@ -16,9 +16,9 @@ import ContactButton from "../components/ContactButton.astro"
       />
     </div>
     <ul class='flex max-md:flex-col space-x-3 lg:space-x-8 items-center'>
-      <li class='hover:text-[#04303b] transition-all duration-300 ease-in-out'><a href='#home'>Inicio</a></li>
-      <li class='hover:text-[#04303b] transition-all duration-300 ease-in-out'><a href='#products'>Productos</a></li>
-      <li class='hover:text-[#04303b] transition-all duration-300 ease-in-out'><a href='#about'>Nosotros</a></li>
+      <li class='hover:text-[#04303b] text-[#82c75c] transition-all duration-300 ease-in-out'><a href='#home'>Inicio</a></li>
+      <li class='hover:text-[#04303b] text-[#82c75c] transition-all duration-300 ease-in-out'><a href='#products'>Productos</a></li>
+      <li class='hover:text-[#04303b] text-[#82c75c] transition-all duration-300 ease-in-out'><a href='#about'>Nosotros</a></li>
     </ul>
     <ContactButton />
   </nav>
@@ -34,14 +34,14 @@ import ContactButton from "../components/ContactButton.astro"
 
     <p class='text-xl md:text-2xl text-[#82c75c]'>Agrecología Integral</p>
 
-    <p class='text-wrap:pretty text-sm md:text-xl md:max-w-xl'>
+    <p class='text-wrap:pretty text-sm md:text-xl md:max-w-xl px-4'>
       Somos Apiario Landak, un emprendimiento familiar vinculado a la comunidad
       étnica del Consejo Comunitario Afro Vallecito. Nuestra miel orgánica cruda
       es producida directamente en las montañas del municipio PEDET Pradera, en
       el Cauca, entre los 1.500 y 1.800 msnm.
     </p>
 
-    <div class='flex flex-col gap-2 md:gap-4 md:pt-12 sm:flex-row pb-2 md:pb-8'>
+    <div class='flex flex-col gap-2 md:gap-4 md:pt-12 sm:flex-row pb-2 md:pb-8 px-4'>
       <a
         href='#products'
         class='rounded-sm px-4 py-3 text-sm text-center font-normal bg-transparent border hover:border-[#82c75c] hover:bg-[#82c75c] border-white animation: transition-all duration-300 ease-in-out'
