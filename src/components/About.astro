@@ -1,5 +1,5 @@
 ---
-import paisaje from '@assets/images/about/paisaje.jpg';
+import paisaje from '@assets/images/about.jpg';
 import { Image } from 'astro:assets';
 ---
 
@@ -10,17 +10,12 @@ import { Image } from 'astro:assets';
 >
 <h2 class='text-[#82c75c] md:text-4xl'>Nosotros</h2>
 
-<div class="flex flex-col md:flex-row md:justify-around md:items-start w-full justify-center items-center mt-8 gap-y-4">
-    <p class="text-pretty max-w-xl text-[#04303b] font-light md:text-xl">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque id quas saepe quia alias adipisci hic nihil! Nemo 
-        tempora eius at quaerat asperiores labore quisquam, nostrum, architecto quae praesentium incidunt dolores rerum officia animi commodi 
-        corporis ab neque. Atque, deleniti quas pariatur mollitia odio esse! Vitae sed quos dolor nemo.
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque id quas saepe quia alias adipisci hic nihil! Nemo 
-        tempora eius at quaerat asperiores labore quisquam, nostrum, architecto quae praesentium incidunt dolores rerum officia animi commodi 
-        corporis ab neque. Atque, deleniti quas pariatur mollitia odio esse! Vitae sed quos dolor nemo.
+<div class="flex flex-col md:flex-row md:justify-around w-full justify-center items-center mt-8 gap-y-4">
+    <p class="text-pretty max-w-md text-[#04303b] font-light md:text-xl">
+        Cada gota de nuestra miel captura la riqueza floral de la región: la suavidad de las flores de arrayán, la calidez dorada del girasol, botón de oro, flor amarillo, y la exquisita influencia del mejor café del mundo. El resultado es un néctar con cuerpo, carácter y sabor único que refleja la esencia pura de nuestras montañas, ubicadas en zona de reserva forestal
     </p>
-    <div class="flex">
-        <Image src={paisaje} alt="about_image" class="rounded-xl shadow-2xl shadow-[#04303b]">
+    <div class="flex justify-center items-center">
+        <Image src={paisaje} alt="about_image" class="md:max-w-xl max-h-80 rounded-xl shadow-2xl shadow-[#04303b]">
     </div>
 </div>
   
