@@ -1,6 +1,30 @@
+---
+import CardProduct from "@components/CardProduct.astro"
+import { getCollection } from 'astro:content';
+const productsData = await getCollection("products")
+---
+
 <section
   id='products'
   class='flex flex-col items-center bg-[#04303b] text-white py-8 px-8 shadow-2xl'
 >
-  <h2 class=''>Nuestros Productos</h2>
+  <h2>Nuestros Productos</h2>
+  <div class="grid grid-cols-3 mt-12">
+  {
+    productsData.map((productEntity) => (
+      <div class='grid md:grid-flow-col md:justify-between gap-x-2'>
+           {productEntity.data.slice(0, 3).map((product) => (
+                <CardProduct
+                    slug={product.slug}
+                    title={product.title}
+                    description={product.description}
+                    amount={product.amount}
+                    available={product.available}
+                />
+            <hr class="md:none my-4 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
+            ))}
+        </div>
+    ))
+  }
+  </div>
 </section>
