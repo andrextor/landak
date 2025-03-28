@@ -7,4 +7,5 @@ export const productSchema = z.object({
     image_path: z.string().optional(),
     amount: z.string(),
     available: z.boolean(),
+    cant: z.string(),
 })
