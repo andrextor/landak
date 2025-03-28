@@ -6,12 +6,20 @@ const productsData = await getCollection("products")
 
 <section
   id='products'
-  class='flex flex-col items-center bg-[#04303b] text-white py-8 shadow-2xl'
+  class='flex flex-col items-center bg-[#04303b] text-white py-8 shadow-2xl px-4'
 >
-<div class="flex flex-col md:flex-row justify-center gap-x-2 items-center md:items-baseline">
+<div class="flex flex-col md:max-w-3xl items-center">
     <h2 class="text-[#82c75c] text-2xl">Nuestros Productos</h2>
-    <a href="" class="hover:text-[#e8e454]">Ver más →</a>
+    <div class="flex flex-col justify-center gap-x-2 items-center">
+        <p class="items-center md:items-start text-pretty mt-8 md:text-xl font-thin">
+            Cada gota de nuestra miel captura la riqueza floral de la región: la suavidad de las flores de arrayán, la calidez dorada del girasol, botón de oro
+            y flor amarillo, y la exquisita influencia del mejor café del mundo. El resultado es un néctar con cuerpo, carácter y sabor único que refleja la esencia pura de nuestras
+            montañas, ubicadas en zona de reserva forestal.
+        </p>
+    </div>
 </div>
+
+
 <div class='grid w-full justify-center md:grid-flow-col md:justify-around mt-8'>
   {
     productsData.map((productEntity) => (
@@ -28,4 +36,5 @@ const productsData = await getCollection("products")
     }
     </div>
   </div>
+  <a href="/products" class="md:text-2xl mt-8 text-[#e8e454] hover:text-[#82c75c] underline">Ver más productos→</a>
 </section>
