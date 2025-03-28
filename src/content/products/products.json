@@ -9,15 +9,6 @@
         "cant": "750 gr"
     },
     {
-        "slug": "CL455",
-        "title": "Condimento órganico natural de achiote",
-        "description": "¡Color, sabor y tradición en cada gota!, el condimento ancestral que transforma tus platillos con su vibrante color rojizo y su inconfundible sabor terroso.",
-        "image_path": "cl-455",
-        "amount": "$18.000",
-        "available": true,
-        "cant": "455 gr"
-    },
-    {
         "slug": "ML415",
         "title": "Miel Pura landak 415",
         "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
@@ -34,6 +25,15 @@
         "amount": "$15.000",
         "available": true,
         "cant": "215 gr"
+    },
+    {
+        "slug": "CL455",
+        "title": "Condimento órganico natural de achiote",
+        "description": "¡Color, sabor y tradición en cada gota!, el condimento ancestral que transforma tus platillos con su vibrante color rojizo y su inconfundible sabor terroso.",
+        "image_path": "cl-455",
+        "amount": "$18.000",
+        "available": true,
+        "cant": "455 gr"
     },
     {
         "slug": "ML700",
