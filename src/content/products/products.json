@@ -14,5 +14,21 @@
         "image_path": "ml-1.jpg",
         "amount": "20.000",
         "available": true
+    },
+    {
+        "slug": "ml-1",
+        "title": "miel 1",
+        "description": "la mejor miel del mundo",
+        "image_path": "ml-1.jpg",
+        "amount": "20.000",
+        "available": true
+    },
+    {
+        "slug": "ml-1",
+        "title": "miel 1",
+        "description": "la mejor miel del mundo",
+        "image_path": "ml-1.jpg",
+        "amount": "20.000",
+        "available": true
     }
 ]

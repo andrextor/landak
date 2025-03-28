@@ -6,14 +6,16 @@ const productsData = await getCollection("products")
 
 <section
   id='products'
-  class='flex flex-col items-center bg-[#04303b] text-white py-8 px-8 shadow-2xl'
+  class='flex flex-col items-center bg-[#04303b] text-white py-8 shadow-2xl'
 >
-  <h2 class="text-[#82c75c] text-2xl">Nuestros Productos</h2>
-  <div class="grid grid-col mt-8 w-full items-center justify-center">
+<div class="flex flex-col md:flex-row justify-center gap-x-2 items-center md:items-baseline">
+    <h2 class="text-[#82c75c] text-2xl">Nuestros Productos</h2>
+    <a href="" class="hover:text-[#e8e454]">Ver más →</a>
+</div>
+<div class='grid w-full justify-center md:grid-flow-col md:justify-around mt-8'>
   {
     productsData.map((productEntity) => (
-      <div class='grid md:grid-flow-col md:justify-between gap-x-2 '>
-           {productEntity.data.slice(0, 3).map((product) => (
+           productEntity.data.slice(0, 4).map((product) => (
                 <CardProduct
                     slug={product.slug}
                     title={product.title}
@@ -21,10 +23,9 @@ const productsData = await getCollection("products")
                     amount={product.amount}
                     available={product.available}
                 />
-            <hr class="md:none my-4 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
-            ))}
-        </div>
-    ))
-  }
+            ))
+        ))
+    }
+    </div>
   </div>
 </section>
