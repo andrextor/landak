@@ -1,0 +1,32 @@
+---
+import ContactButton from "@components/ContactButton.astro"
+---
+
+<nav
+  class='flex top-0 w-full px-6 py-4 md:z-50 md:fixed md:backdrop-blur-md md:font-semibold rounded-b-xl items-center md:px-12 max-md:flex-col md:flex-row sm:justify-center md:justify-between text-center bg-transparent md:py-4 text-white justify-items-center lg:text-lg'
+>
+  <div class='flex max-md:flex-col'>
+    <img
+      class='object-scale-down h-14 md:pr-8'
+      src='/images/logo.png'
+      alt='Landak'
+    />
+  </div>
+  <ul class='flex max-md:flex-col space-x-3 lg:space-x-8 items-center'>
+    <li
+      class='hover:text-[#04303b] text-[#82c75c] transition-all duration-300 ease-in-out'
+    >
+      <a href='#home'>Inicio</a>
+    </li>
+    <li
+      class='hover:text-[#04303b] text-[#82c75c] transition-all duration-300 ease-in-out'
+    >
+      <a href='#products'>Productos</a>
+    </li>
+    <li
+      class='hover:text-[#04303b] text-[#82c75c] transition-all duration-300 ease-in-out'>
+      <a href='#about'>Nosotros</a>
+    </li>
+  </ul>
+  <ContactButton />
+</nav>

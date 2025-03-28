@@ -1,8 +1,7 @@
 ---
  import '../styles/global.css'
  import Footer from "../components/Footer.astro"
- import Header from "../components/Header.astro"
-
+const { footerBg } = Astro.props
 ---
 
 <!doctype html>
@@ -15,13 +14,11 @@
 		<title>Finca Landak</title>
 	</head>
 	<body class="font-sans text-[#04303b] grid grid-flow-rows">
-    <div class="bg-[#04303b]">
-      <Header/>
-    </div>
+    <slot name="header" />
 		<main class="bg-white">    
 			<slot />
 		</main>
-    <div class="bg-white">
+    <div class={` ${footerBg || 'bg-white'}`}}>
       <Footer />
     </div>
   </body>

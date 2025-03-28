@@ -23,7 +23,7 @@ const productsData = await getCollection("products")
 <div class='grid w-full justify-center md:grid-flow-col md:justify-around mt-8'>
   {
     productsData.map((productEntity) => (
-           productEntity.data.slice(0, 4).map((product) => (
+           productEntity.data.slice(0, 4).map((product: any) => (
                 <CardProduct
                     slug={product.slug}
                     title={product.title}

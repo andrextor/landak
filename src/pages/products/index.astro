@@ -1,0 +1,36 @@
+---
+import Layout from '@layouts/Layout.astro';
+import ContactButton from "@components/ContactButton.astro"
+
+
+---
+<Layout footerBg="bg-[#04303b]">
+<nav
+  class='flex top-0 w-full px-6 py-4 md:z-50 md:fixed backdrop-blur-md md:font-semibold items-center md:px-12 max-md:flex-col md:flex-row sm:justify-center md:justify-between text-center bg-white/90 rounded-b-xl md:py-4 text-white justify-items-center lg:text-lg'
+>
+  <div class='flex max-md:flex-col'>
+    <img
+      class='object-scale-down h-14 md:pr-8'
+      src='/images/logo.png'
+      alt='Landak'
+    />
+  </div>
+  <ul class='flex max-md:flex-col space-x-3 lg:space-x-8 items-center'>
+    <li
+      class='hover:text-[#04303b] text-[#82c75c] transition-all duration-300 ease-in-out'
+    >
+      <a href='/'>← Volver al inicio</a>
+    </li>
+  </ul>
+  <ContactButton />
+</nav>
+<section class="flex flex-col items-start gap-y-4 h-screen px-4 bg-[#04303b]">
+<div class="flex flex-col pt-4 md:pt-32 w-full h-screen gap-y-8">
+<h2 class="text-[#04303b] text-4xl">Nuestros Productos</h2>
+<div class="grid grid-cols-2">
+    
+</div>
+</div>
+
+</section>
+</Layout>

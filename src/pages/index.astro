@@ -1,12 +1,15 @@
 ---
-
-import Layout from '../layouts/Layout.astro';
-import FloatingButton from "../components/FloatingButton.astro"
-import Products from "../components/Products.astro"
+import Layout from '@layouts/Layout.astro';
+import FloatingButton from "@components/FloatingButton.astro"
+import Products from "@components/Products.astro"
 import About from '@components/About.astro';
+import Header from "../components/Header.astro"
 ---
 
 <Layout>
+<div slot="header" class="bg-[#04303b]">
+<Header/>
+</div>
 <Products/>
 <div class="bg-[#04303b]">
 <About/>
