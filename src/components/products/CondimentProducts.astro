@@ -1,0 +1,39 @@
+---
+import CardProductDetail from "@components/CardProductDetail.astro";
+
+export interface Product {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  image_path?: string;
+  amount: string;
+  available: boolean;
+  cant: string;
+}
+
+interface Props {
+  products: Product[];
+}
+
+const { products }: { products: Product[] } = Astro.props;
+---
+
+<section class="flex flex-col gap-y-1 px-4 bg-[#04303b] pb-8">
+    <h2 class="text-[#82c75c] text-xl md:text-2xl">Categoria: Condimentos</h2>
+    <div class="grid grid-col md:grid-cols-2 md:justify-start items-center gap-8">
+      {products
+      .filter((product) => product.category === "Condimentos")
+      .map((product) => (
+        <CardProductDetail
+          slug={product.slug}
+          title={product.title}
+          description={product.description}
+          amount={product.amount}
+          available={product.available}
+          cant={product.cant}
+          image_path={product.image_path}
+        />
+      ))}
+    </div>
+</section>
