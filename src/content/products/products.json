@@ -1,17 +1,9 @@
 [
     {
-        "slug": "ML750",
-        "title": "Miel Pura landak 750",
-        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
-        "image_path": "ml-750",
-        "amount": "$45.000",
-        "available": true,
-        "cant": "750 gr"
-    },
-    {
         "slug": "ML415",
         "title": "Miel Pura landak 415",
         "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
+        "category": "Miel",
         "image_path": "ml-415",
         "amount": "$25.000",
         "available": true,
@@ -21,27 +13,50 @@
         "slug": "ML215",
         "title": "Miel Pura landak 215",
         "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
+        "category": "Miel",
         "image_path": "ml-215",
         "amount": "$15.000",
         "available": true,
         "cant": "215 gr"
     },
     {
-        "slug": "CL455",
-        "title": "Condimento órganico natural de achiote",
-        "description": "¡Color, sabor y tradición en cada gota!, el condimento ancestral que transforma tus platillos con su vibrante color rojizo y su inconfundible sabor terroso.",
-        "image_path": "cl-455",
-        "amount": "$18.000",
+        "slug": "ML750",
+        "title": "Miel Pura landak 750",
+        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
+        "category": "Miel",
+        "image_path": "ml-750",
+        "amount": "$45.000",
         "available": true,
-        "cant": "455 gr"
+        "cant": "750 gr"
     },
     {
-        "slug": "ML700",
-        "title": "Miel Pura landak 700",
-        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
-        "image_path": "ml-700",
-        "amount": "$42.000",
+        "slug": "CLA85",
+        "title": "Achiote orgánico aceite 85 ml",
+        "description": "Achiote orgánico en aceite con romero, 100% natural, perfecto para marinar y sazonar carnes y asados con un toque gourmet",
+        "category": "Condimentos",
+        "image_path": "cla-85",
+        "amount": "$15.000",
         "available": true,
-        "cant": "700 gr"
+        "cant": "85 ML"
+    },
+    {
+        "slug": "CLA455",
+        "title": "Condimento órganico aceite 455 ml",
+        "description": "Achiote orgánico en aceite con romero, 100% natural, perfecto para marinar y sazonar carnes y asados con un toque gourmet",
+        "category": "Condimentos",
+        "image_path": "cla-455",
+        "amount": "$18.000",
+        "available": true,
+        "cant": "455 ML"
+    },
+    {
+        "slug": "CLM200",
+        "title": "Achiote orgánico molido 200 gr",
+        "description": "Achiote orgánico molido con romero, 100% natural, perfecto para marinar y sazonar carnes y asados con un toque gourmet",
+        "category": "Condimentos",
+        "image_path": "clm-200",
+        "amount": "$15.000",
+        "available": true,
+        "cant": "200 gr"
     }
 ]
