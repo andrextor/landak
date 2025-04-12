@@ -1,15 +1,5 @@
 [
     {
-        "slug": "ML415",
-        "title": "Miel Pura landak 415",
-        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
-        "category": "Miel",
-        "image_path": "ml-415",
-        "amount": "$25.000",
-        "available": true,
-        "cant": "415 gr"
-    },
-    {
         "slug": "ML215",
         "title": "Miel Pura landak 215",
         "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
@@ -20,16 +10,6 @@
         "cant": "215 gr"
     },
     {
-        "slug": "ML750",
-        "title": "Miel Pura landak 750",
-        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
-        "category": "Miel",
-        "image_path": "ml-750",
-        "amount": "$45.000",
-        "available": true,
-        "cant": "750 gr"
-    },
-    {
         "slug": "CLA85",
         "title": "Achiote orgánico aceite 85 ml",
         "description": "Achiote orgánico en aceite con romero, 100% natural, perfecto para marinar y sazonar carnes y asados con un toque gourmet",
@@ -38,6 +18,16 @@
         "amount": "$15.000",
         "available": true,
         "cant": "85 ML"
+    },  
+    {
+        "slug": "ML415",
+        "title": "Miel Pura landak 415",
+        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
+        "category": "Miel",
+        "image_path": "ml-415",
+        "amount": "$25.000",
+        "available": true,
+        "cant": "415 gr"
     },
     {
         "slug": "CLA455",
@@ -48,6 +38,16 @@
         "amount": "$18.000",
         "available": true,
         "cant": "455 ML"
+    },
+    {
+        "slug": "ML750",
+        "title": "Miel Pura landak 750",
+        "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
+        "category": "Miel",
+        "image_path": "ml-750",
+        "amount": "$45.000",
+        "available": true,
+        "cant": "750 gr"
     },
     {
         "slug": "CLM200",
