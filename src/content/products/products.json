@@ -36,7 +36,7 @@
         "category": "Condimentos",
         "image_path": "cla-455",
         "amount": "$18.000",
-        "available": true,
+        "available": false,
         "cant": "455 ML"
     },
     {
