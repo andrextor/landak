@@ -5,6 +5,7 @@ import HoneyProducts from '@components/products/HoneyProducts.astro';
 import { getCollection } from 'astro:content';
 import CondimentProducts from '@components/products/CondimentProducts.astro';
 const productsData = await getCollection("products");
+import SeedsProducts from '@components/products/SeedsProducts.astro';
 
 export interface Product {
   slug: string;
@@ -52,6 +53,7 @@ const products: Product[] = productsData.flatMap((entry) => entry.data);
 
     <HoneyProducts products={products} />
    <CondimentProducts products={products} />
+   <SeedsProducts products={products}>
   </div>
 </section>
 </Layout>
