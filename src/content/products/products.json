@@ -20,15 +20,15 @@
         "cant": "215 gr"
     },
     {
-        "slug": "CLA85",
-        "title": "Achiote orgánico aceite 85 ml",
+        "slug": "CLA455",
+        "title": "Condimento órganico aceite 455 ml",
         "description": "Achiote orgánico en aceite con romero, 100% natural, perfecto para marinar y sazonar carnes y asados con un toque gourmet",
         "category": "Condimentos",
-        "image_path": "cla-85",
-        "amount": "$15.000",
+        "image_path": "cla-455",
+        "amount": "$25.000",
         "available": true,
-        "cant": "85 ML"
-    },  
+        "cant": "455 ML"
+    }, 
     {
         "slug": "ML415",
         "title": "Miel Pura landak 415",
@@ -39,16 +39,7 @@
         "available": true,
         "cant": "415 gr"
     },
-    {
-        "slug": "CLA455",
-        "title": "Condimento órganico aceite 455 ml",
-        "description": "Achiote orgánico en aceite con romero, 100% natural, perfecto para marinar y sazonar carnes y asados con un toque gourmet",
-        "category": "Condimentos",
-        "image_path": "cla-455",
-        "amount": "$18.000",
-        "available": false,
-        "cant": "455 ML"
-    },
+
     {
         "slug": "ML750",
         "title": "Miel Pura landak 750",
