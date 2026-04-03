@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import Nav from '@components/layout/Nav.astro';
+import CardProductDetail from '@components/product/CardProductDetail.astro';
+import Layout from '@layouts/Layout.astro';
+import type { Product } from '@models/product';
+
+export async function getStaticPaths() {
+  const productsData = await getCollection('products');
+  const allProducts: Product[] = productsData.flatMap((entry) => entry.data);
+
+  return allProducts.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+---
+
+<Layout title={`${product.title} - Landak`} footerBg="bg-[#0a2a1f]">
+  <Nav isHome={false} backHref="/products" />
+
+  <div class='min-h-screen bg-gradient-to-b from-[#0d2e24] via-landak-teal to-[#0d2e24] pt-28 pb-16 px-4'>
+    <div class='max-w-5xl mx-auto space-y-12'>
+      
+      <!-- Breadcrumb indicator -->
+      <nav class='hidden sm:flex items-center gap-x-2 text-[10px] uppercase tracking-widest text-white/40'>
+        <a href='/' class='hover:text-landak-light transition-colors'>Inicio</a>
+        <span>/</span>
+        <a href='/products' class='hover:text-landak-light transition-colors'>Productos</a>
+        <span>/</span>
+        <span class='text-landak-yellow'>{product.title}</span>
+      </nav>
+
+      <!-- Main product detail -->
+      <div class='animate-fade-in'>
+        <CardProductDetail {...product} />
+      </div>
+      
+      <!-- Additional branding section -->
+      <div class='relative overflow-hidden bg-white/5 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl'>
+        <!-- Decorative glow -->
+        <div class='absolute -top-24 -left-24 w-64 h-64 bg-landak-light/10 rounded-full blur-3xl pointer-events-none'></div>
+
+        <div class='relative flex flex-col md:flex-row gap-8 items-center'>
+          <div class='flex-1 space-y-6'>
+            <div class='inline-flex items-center gap-x-3 px-4 py-1.5 rounded-full bg-landak-light/10 border border-landak-light/20'>
+              <span class='w-1.5 h-1.5 rounded-full bg-landak-yellow animate-pulse'></span>
+              <span class='text-[10px] font-bold text-landak-light uppercase tracking-widest'>Pureza de Origen</span>
+            </div>
+            <h3 class='text-3xl md:text-4xl font-bold text-white font-bellota italic'>
+              ¿Por qué elegir <span class='text-landak-light'>Landak</span>?
+            </h3>
+            <p class='text-white/70 font-arsenal leading-relaxed text-lg font-light'>
+              Nuestra miel orgánica cruda es producida con amor y respeto por la naturaleza en las altas montañas del Valle del Cauca. Entre los <strong>1.500 y 1.800 metros sobre el nivel del mar</strong>, nuestras abejas recolectan néctar de bosques nativos protegidos.
+            </p>
+            <p class='text-white/70 font-arsenal leading-relaxed text-lg font-light'>
+              Cada frasco es una captura de la biodiversidad de nuestra región, libre de procesos industriales, calor excesivo o aditivos. Disfruta de la miel tal como la naturaleza la diseñó: viva, rica en nutrientes y con un sabor inigualable.
+            </p>
+          </div>
+
+          <div class='shrink-0 w-32 h-32 md:w-48 md:h-48 flex items-center justify-center opacity-40 grayscale sepia brightness-150'>
+             <img src='/images/logo.png' alt='Landak Logo' class='w-full h-full object-contain' />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+</style>

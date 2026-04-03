@@ -1,0 +1,44 @@
+# Agent Project Guidelines: Finca Landak SPA (Astro, Tailwind, TypeScript)
+
+## 1. Brand Identity & Design System (CRITICAL)
+[cite_start]You are developing the web presence for "Finca Landak", an agroecology brand[cite: 33]. [cite_start]The design must reflect its personality: friendly, helpful, wise, and committed to nature[cite: 58, 59, 61]. 
+
+### Color Palette
+[cite_start]Strictly use the following HEX codes defined in the brand manual. Do not invent new colors. Assume these are configured in `tailwind.config.ts`:
+- [cite_start]**Primary Dark Green:** `#0c6511` (Use for primary buttons, strong emphasis) 
+- [cite_start]**Deep Teal/Blue:** `#04303b` (Use for dark backgrounds, footer, strong typography) 
+- [cite_start]**Light Green:** `#82c75c` (Use for accents, secondary elements, hover states) 
+- [cite_start]**Orange/Yellow:** `#ffb545` (Use for calls to action, highlights, warnings) 
+- [cite_start]**Yellow:** `#e8e454` (Use for subtle accents or bright highlights) 
+
+### Typography
+- [cite_start]**Primary Font:** `Arsenal` (Regular, Italic, Bold)[cite: 102]. Use for main headings, body text, and general UI.
+- [cite_start]**Secondary Font:** `Bellota Text` (Light)[cite: 102]. Use for complementary text, subtitles, or stylistic accents.
+
+### Logo & Visual Asset Rules
+- [cite_start]Do not apply heavy drop shadows to logos or brand assets[cite: 111].
+- [cite_start]Do not stretch, rotate, or modify the proportions of the logo[cite: 111].
+- Ensure high contrast and readability. [cite_start]The logo can be used in positive (dark on light) or negative (white on dark)[cite: 105].
+
+## 2. Technical Stack & Architecture
+
+### Astro & Component Structure
+- Use `.astro` components for all static UI. 
+- Keep component structures modular and concise. Separation of concerns is key.
+- Optimize all images using `astro:assets`.
+
+### Tailwind CSS
+- **Utility-First:** Rely on Tailwind utility classes. Avoid custom CSS or `@apply` unless handling strict third-party overrides.
+- **Brand Integration:** Always use the semantic color names defined in the Tailwind config (e.g., `text-landak-dark-green`, `bg-landak-orange`) rather than hardcoding hex values in the markup.
+- **Responsive & Clean:** Design mobile-first. Ensure clean DOM structures without excessive `div` nesting.
+
+### Strict TypeScript & Developer Experience
+- **Absolute Type Safety:** `any` is strictly forbidden. Define clear `interface` or `type` for all component Props, API payloads, and state objects.
+- **Direct & Concise Code:** Write logic that is easy to read. Avoid over-engineering.
+- **Clean Execution:** Ensure the application fails gracefully and does not leak sensitive information or excessive noise into browser consoles or server logs. 
+- Use path aliases (e.g., `@/components`, `@/layouts`) for imports.
+
+## 3. UI/UX Principles
+- [cite_start]**Organic & Accessible:** The UI should feel natural and approachable, reflecting the "Agroecología Integral" baseline[cite: 88].
+- **State Management:** Ensure interactive elements have distinct, accessible `:hover`, `:focus`, and `:active` states using the brand's secondary colors.
+- [cite_start]Maintain generous whitespace to give the content room to breathe, aligning with the brand's clear and direct tone[cite: 60].

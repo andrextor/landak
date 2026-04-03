@@ -1,59 +1,54 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import ContactButton from "@components/ContactButton.astro"
-import HoneyProducts from '@components/products/HoneyProducts.astro';
 import { getCollection } from 'astro:content';
-import CondimentProducts from '@components/products/CondimentProducts.astro';
-const productsData = await getCollection("products");
-import SeedsProducts from '@components/products/SeedsProducts.astro';
+import Nav from '@components/layout/Nav.astro';
+import CondimentProducts from '@components/product/CondimentProducts.astro';
+import HoneyProducts from '@components/product/HoneyProducts.astro';
+import SeedsProducts from '@components/product/SeedsProducts.astro';
+import Layout from '@layouts/Layout.astro';
+import type { Product } from '@models/product';
 
-export interface Product {
-  slug: string;
-  title: string;
-  description: string;
-  category: string;
-  image_path?: string;
-  amount: string;
-  available: boolean;
-  cant: string;
-}
-
+const productsData = await getCollection('products');
 const products: Product[] = productsData.flatMap((entry) => entry.data);
 ---
 
-<Layout footerBg="bg-[#04303b]">
-<nav
-  class='flex top-0 w-full px-6 py-4 md:z-50 md:fixed backdrop-blur-md md:font-semibold items-center md:px-12 max-md:flex-col md:flex-row sm:justify-center md:justify-between text-center bg-white/90 rounded-b-xl md:py-4 text-white justify-items-center lg:text-lg'
->
-  <div class='flex max-md:flex-col'>
-    <img
-      class='object-scale-down h-14 md:pr-8'
-      src='/images/logo.png'
-      alt='Landak'
-    />
-  </div>
-  <ul class='flex max-md:flex-col space-x-3 lg:space-x-8 items-center'>
-    <li
-      class='hover:text-[#04303b] text-[#82c75c] transition-all duration-300 ease-in-out'
-    >
-      <a href='/'>← Volver al inicio</a>
-    </li>
-  </ul>
-  <ContactButton />
-</nav>
-<section class="flex flex-col gap-y-4 px-4 bg-[#04303b] pb-8">
-  <div class="flex flex-col pt-4 md:pt-32 w-full gap-y-2 items-center">
-    <h2 class="text-[#82c75c] text-4xl">Nuestros Productos</h2>
-    <p class="text-[#82c75c] text-md font-thin">
-      Descubre el sabor auténtico de la naturaleza con Apiario Landak
-    </p>
-    <p class="text-[#e8e454] text-center md:text-start md:text-2xl font-thin">
-      Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA
-    </p>
+<Layout footerBg="bg-landak-teal">
+  <Nav isHome={false} />
 
-    <HoneyProducts products={products} />
-   <CondimentProducts products={products} />
-   <SeedsProducts products={products}>
+  <!-- Page wrapper with deep teal background -->
+  <div class='min-h-screen bg-gradient-to-b from-[#0d2e24] via-landak-teal to-[#0d2e24]'>
+
+    <!-- Hero header -->
+    <header class='relative flex flex-col items-center text-center pt-32 pb-16 px-4 overflow-hidden'>
+      <!-- Decorative background glow -->
+      <div class='absolute inset-0 pointer-events-none'>
+        <div class='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-landak-light/5 rounded-full blur-3xl'></div>
+      </div>
+
+      <span class='relative px-5 py-1.5 mb-6 text-xs font-bold uppercase tracking-[0.25em] rounded-full bg-landak-light/10 border border-landak-light/20 text-landak-light'>
+        Catálogo Completo
+      </span>
+
+      <h1 class='relative text-5xl md:text-7xl font-bold font-bellota italic text-white leading-tight'>
+        Nuestros <span class='text-landak-light'>Productos</span>
+      </h1>
+
+      <p class='relative mt-4 text-white/60 text-base md:text-lg font-light max-w-xl'>
+        Descubre el sabor auténtico de la naturaleza con Apiario Landak
+      </p>
+
+      <p class='relative mt-4 text-landak-yellow font-light text-sm md:text-base max-w-2xl'>
+        Envase de vidrio premium 100% nuevo y reutilizable · Tapas y sellos libres de BPA
+      </p>
+
+      <!-- Decorative divider -->
+      <div class='relative mt-10 w-24 h-px bg-gradient-to-r from-transparent via-landak-light/50 to-transparent'></div>
+    </header>
+
+    <!-- Categories -->
+    <section class='flex flex-col gap-y-16 px-4 pb-24 w-full max-w-7xl mx-auto'>
+      <HoneyProducts products={products} />
+      <CondimentProducts products={products} />
+      <SeedsProducts products={products} />
+    </section>
   </div>
-</section>
 </Layout>

@@ -7,8 +7,15 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@layouts/*": ["src/layouts/*"],
+      "@models/*": ["src/models/*"],
+      "@utils/*": ["src/utils/*"],
+      "@services/*": ["src/services/*"],
+      "@schemas/*": ["src/schemas/*"],
+      "@constants/*": ["src/constants/*"]
     },
+    "strict": true,
+    "noImplicitAny": true,
     "strictNullChecks": true,
     "allowJs": true
   }
