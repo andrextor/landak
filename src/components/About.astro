@@ -1,22 +1,96 @@
 ---
-import paisaje from '@assets/images/about.jpg';
 import { Image } from 'astro:assets';
+import vallecito from '@assets/images/about/vallecito.webp';
+import mainImg from '@assets/images/about.webp';
+
+const pillars = [
+  {
+    icon: '🌸',
+    title: 'Flora única',
+    body: 'Arrayán, girasol, botón de oro y flor amarillo, en zona de reserva forestal.',
+  },
+  {
+    icon: '☕',
+    title: 'Café de origen',
+    body: 'La influencia del mejor café del mundo le da a nuestra miel un carácter singular.',
+  },
+  {
+    icon: '🏔️',
+    title: 'Montañas vivas',
+    body: 'Producimos en ecosistemas protegidos del Valle del Cauca, Colombia.',
+  },
+];
 ---
 
+<section id="about" class="about-section">
 
-<section
-  id='about'
-  class='flex flex-col items-center py-8 relative px-8 rounded-t-2xl bg-white'
->
-<h2 class='text-[#82c75c] md:text-4xl'>Nosotros</h2>
+  <!-- Section label -->
+  <div class="about-label-row">
+    <span class="about-eyebrow">Nuestra historia</span>
+  </div>
 
-<div class="flex flex-col md:flex-row md:justify-around w-full justify-center items-center mt-8 gap-y-4">
-    <p class="text-pretty max-w-md text-[#04303b] font-light md:text-xl">
-        Cada gota de nuestra miel captura la riqueza floral de la región: la suavidad de las flores de arrayán, la calidez dorada del girasol, botón de oro, flor amarillo, y la exquisita influencia del mejor café del mundo. El resultado es un néctar con cuerpo, carácter y sabor único que refleja la esencia pura de nuestras montañas, ubicadas en zona de reserva forestal
-    </p>
-    <div class="flex justify-center items-center">
-        <Image src={paisaje} alt="about_image" class="md:max-w-xl max-h-80 rounded-xl shadow-2xl shadow-[#04303b]">
+  <div class="about-inner">
+
+    <!-- Text column -->
+    <div class="about-text-col">
+      <h2 class="about-title">
+        Miel con<br />
+        <em>alma de montaña</em>
+      </h2>
+
+      <p class="about-lead">
+        Cada gota de nuestra miel captura la riqueza floral de la región: la suavidad del arrayán, la calidez del girasol y botón de oro, y la exquisita influencia del mejor café del mundo.
+      </p>
+      <p class="about-body">
+        El resultado es un néctar con cuerpo, carácter y sabor único que refleja la esencia pura de nuestras montañas, ubicadas en zona de reserva forestal en el corazón del Valle del Cauca.
+      </p>
+
+      <!-- Pillars -->
+      <ul class="about-pillars">
+        {pillars.map((p) => (
+          <li class="about-pillar">
+            <span class="about-pillar-icon" aria-hidden="true">{p.icon}</span>
+            <div>
+              <strong class="about-pillar-title">{p.title}</strong>
+              <p class="about-pillar-body">{p.body}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
-</div>
-  
+
+    <!-- Image composition column -->
+    <div class="about-images" aria-hidden="true">
+
+      <!-- Decorative ring -->
+      <div class="about-ring"></div>
+
+      <!-- Main image -->
+      <div class="about-img-main-wrap">
+        <Image
+          src={mainImg}
+          alt="Apiario Landak"
+          class="about-img-main"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Secondary image floating card -->
+      <div class="about-img-secondary-wrap">
+        <Image
+          src={vallecito}
+          alt="Paisaje Finca Landak"
+          class="about-img-secondary"
+          loading="lazy"
+        />
+        <div class="about-img-badge">
+          <span class="about-img-badge-text">Vallecito</span>
+        </div>
+      </div>
+
+      <!-- Decorative dot grid -->
+      <div class="about-dots" aria-hidden="true"></div>
+    </div>
+
+  </div>
 </section>

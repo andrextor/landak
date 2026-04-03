@@ -1,0 +1,136 @@
+---
+import EmailIcon from '@components/icons/EmailIcon.astro';
+import InstagramIcon from '@components/icons/InstagramIcon.astro';
+import WhatsAppIcon from '@components/icons/WhatsAppIcon.astro';
+import { CONTACT_CONFIG, SITE_CONFIG } from '@constants/index';
+
+const whatsappLink = `${CONTACT_CONFIG.whatsapp.baseUrl}${CONTACT_CONFIG.whatsapp.number}?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Landak`;
+
+const navLinks = [
+  { name: 'Inicio', href: '#home' },
+  { name: 'Productos', href: '#products' },
+  { name: 'Nosotros', href: '#about' },
+  { name: 'Contacto', href: '#contact' },
+];
+
+const socialLinks = [
+  {
+    label: 'WhatsApp',
+    href: whatsappLink,
+    icon: WhatsAppIcon,
+    value: '+57 300 244 2377',
+    external: true,
+  },
+  {
+    label: 'Correo',
+    href: 'mailto:consejoafrovallecito@gmail.com',
+    icon: EmailIcon,
+    value: 'consejoafrovallecito@gmail.com',
+    external: false,
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/landak_casafinca/',
+    icon: InstagramIcon,
+    value: '@landak_casafinca',
+    external: true,
+  },
+];
+---
+
+<footer id="contact" class="footer-root">
+
+  <!-- Top glow accent -->
+  <div class="footer-glow" aria-hidden="true"></div>
+
+  <div class="footer-container">
+
+    <!-- Brand column -->
+    <div class="footer-brand">
+      <a href="/" aria-label="Volver al inicio">
+        <img
+          loading="lazy"
+          src="/images/logo.png"
+          alt="Landak Logo"
+          class="footer-logo"
+        />
+      </a>
+      <p class="footer-tagline">Pura esencia de nuestras montañas.</p>
+      <p class="footer-location">
+        <svg class="footer-location-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        Finca Landak, Corregimiento Vallecito,<br />
+        Pradera – Valle del Cauca
+      </p>
+    </div>
+
+    <!-- Quick nav -->
+    <nav class="footer-nav" aria-label="Navegación del pie de página">
+      <h3 class="footer-col-title">Navegación</h3>
+      <ul class="footer-nav-list">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="footer-nav-link">
+              <svg class="footer-nav-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Contact column -->
+    <div class="footer-contact">
+      <h3 class="footer-col-title">Contáctanos</h3>
+      <ul class="footer-contact-list">
+        {socialLinks.map(({ label, href, icon: Icon, value, external }) => (
+          <li>
+            <a
+              href={href}
+              class="footer-contact-link"
+              aria-label={label}
+              {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
+              <span class="footer-contact-icon-wrap">
+                <Icon size="18" className="text-landak-light" />
+              </span>
+              <span class="footer-contact-value">{value}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <p class="footer-copy">
+      &copy;{new Date().getFullYear()} {SITE_CONFIG.name}. Todos los derechos reservados.
+    </p>
+    <p class="footer-credits">
+      Desarrollado por&nbsp;
+      <a
+        href="https://www.linkedin.com/in/iván-andrés-lópez-gómez-1b2a1b187/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-credit-link"
+      >Andrés López</a>
+      &nbsp;&bull;&nbsp;
+      Diseñado por&nbsp;
+      <a
+        href="https://www.linkedin.com/in/santiago-navas-calero-55468910a/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-credit-link"
+      >Santiago Navas</a>
+    </p>
+  </div>
+
+</footer>

@@ -1,0 +1,14 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+---
+
+<a
+  class={`rounded-full w-full md:w-auto px-8 py-3.5 text-lg font-bold bg-transparent border-2 border-white text-white hover:bg-white hover:text-landak-teal transition-all duration-300 transform hover:-translate-y-1 ${className}`}
+  href='#contact'
+>
+  Contacta con nosotros
+</a>

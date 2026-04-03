@@ -1,0 +1,80 @@
+---
+import WhatsAppIcon from '@components/icons/WhatsAppIcon.astro';
+import ProductImage from '@components/ui/ProductImage.astro';
+import type { Product } from '@models/product';
+import { formatCOP } from '@utils/format';
+import { getWhatsAppUrl } from '@utils/whatsapp';
+
+interface Props extends Product {}
+
+const { slug, title, description, amount, available, cant, image_path, category } = Astro.props;
+
+const whatsAppUrl = getWhatsAppUrl({ title, slug });
+const formattedAmount = amount ? formatCOP(amount) : null;
+---
+
+<article class='group relative flex flex-col md:flex-row w-full gap-6 p-5 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl shadow-black/20 transition-all duration-500 hover:bg-white/[0.08] hover:border-white/20 overflow-hidden'>
+  
+  <!-- Image section -->
+  <div class='relative shrink-0 w-full md:w-56 lg:w-64 aspect-square md:aspect-auto md:h-auto overflow-hidden rounded-2xl bg-black/20'>
+    <ProductImage
+      imagePath={`/src/assets/images/products/${image_path}.webp`}
+      addClass='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
+    />
+
+    <!-- Availability badge -->
+    <div class={`absolute top-4 right-4 flex items-center gap-x-1.5 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border ${available ? 'bg-black/70 border-landak-light text-landak-light' : 'bg-black/70 border-red-400 text-red-500'}`}>
+      <span class={`size-1.5 rounded-full shrink-0 ${available ? 'bg-landak-light shadow-[0_0_8px_rgba(130,199,92,1)]' : 'bg-red-400 shadow-[0_0_8px_rgba(240,82,82,1)]'}`}></span>
+      {available ? 'Disponible' : 'Agotado'}
+    </div>
+
+    {category && (
+      <div class='absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-black/50 border border-white/10 text-white/70 backdrop-blur-sm'>
+        {category}
+      </div>
+    )}
+  </div>
+
+  <!-- Content section -->
+  <div class='flex flex-col flex-1 gap-y-4 py-1 minim-w-0'>
+    <div class='space-y-1.5'>
+      <h3 class='text-xl md:text-2xl font-bold text-white font-bellota italic tracking-tight group-hover:text-landak-light transition-colors duration-300 line-clamp-1'>
+        {title}
+      </h3>
+      <div class='flex flex-wrap gap-2 pt-0.5'>
+        <span class='px-2 py-0.5 rounded-md text-[9px] font-bold bg-landak-teal/40 border border-landak-light/20 text-landak-light uppercase tracking-wider'>
+          Ref: {slug}
+        </span>
+        <span class='px-2 py-0.5 rounded-md text-[9px] font-bold bg-landak-yellow/20 border border-landak-yellow/30 text-landak-yellow uppercase tracking-wider'>
+          Peso/Cant: {cant}
+        </span>
+      </div>
+    </div>
+
+    <div class='flex flex-col gap-y-1.5'>
+      <span class='text-[9px] font-bold text-white/40 uppercase tracking-widest'>Presentación & Detalles</span>
+      <p class='text-xs md:text-sm text-white/70 leading-relaxed font-light line-clamp-3'>
+        {description}
+      </p>
+    </div>
+
+    <div class='mt-auto pt-2 flex flex-row items-center justify-between gap-4'>
+      <div class='flex flex-col shrink-0'>
+        <span class='text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] mb-0.5'>Inversión</span>
+        <span class='text-xl md:text-2xl font-bold text-landak-yellow drop-shadow-sm whitespace-nowrap'>
+          {formattedAmount}
+        </span>
+      </div>
+
+      <a
+        href={whatsAppUrl}
+        target='_blank'
+        rel='noopener noreferrer'
+        class='flex-1 sm:flex-initial flex items-center justify-center gap-x-2 py-2.5 px-5 rounded-xl bg-[#25D366] text-white text-[11px] font-bold tracking-wide transition-all duration-300 hover:brightness-110 hover:scale-[1.02] active:scale-95 shadow-xl shadow-[#25D366]/20 whitespace-normal text-center leading-tight'
+      >
+        <WhatsAppIcon className='w-4 h-4 shrink-0' />
+        Pedir vía WhatsApp
+      </a>
+    </div>
+  </div>
+</article>

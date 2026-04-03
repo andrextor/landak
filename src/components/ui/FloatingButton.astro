@@ -1,0 +1,23 @@
+---
+import WhatsAppIcon from '@components/icons/WhatsAppIcon.astro';
+import { CONTACT_CONFIG } from '@constants/index';
+
+const whatsappLink = `${CONTACT_CONFIG.whatsapp.baseUrl}${CONTACT_CONFIG.whatsapp.number}?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Landak`;
+---
+
+<div class='relative group'>
+  <a
+    aria-label='WhatsApp Contact'
+    target='_blank'
+    rel="noopener noreferrer"
+    href={whatsappLink}
+    class='z-40 text-white flex flex-col items-center justify-center fixed bottom-6 right-6 lg:bottom-10 lg:right-10'
+  >
+    <div class='p-4 rounded-full border-4 border-white bg-landak-primary shadow-2xl shadow-landak-primary/40 transform transition-all duration-500 hover:rotate-12 hover:scale-110 active:scale-95 group'>
+        <WhatsAppIcon className="w-8 h-8 text-white" />
+        <span class="absolute right-full mr-4 bg-white text-landak-teal px-4 py-2 rounded-xl font-bold shadow-xl opacity-0 translate-x-10 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap pointer-events-none border border-landak-teal/5">
+            ¿En qué podemos ayudarte?
+        </span>
+    </div>
+  </a>
+</div>

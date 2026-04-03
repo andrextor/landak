@@ -1,0 +1,150 @@
+---
+import ContactButton from '@components/ui/ContactButton.astro';
+
+interface Props {
+  isHome?: boolean;
+  backHref?: string;
+}
+
+const { isHome = true, backHref = '/' } = Astro.props;
+
+const navLinks = isHome
+  ? [
+      { name: 'Inicio', href: '#home' },
+      { name: 'Productos', href: '#products' },
+      { name: 'Nosotros', href: '#about' },
+    ]
+  : [{ name: '← Volver atrás', href: backHref }];
+---
+
+<nav
+  class='fixed top-0 w-full px-6 py-3 md:px-12 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-sm transition-all duration-300 z-50 flex items-center justify-between'
+>
+  <div class='flex items-center'>
+    <a href="/" class="flex flex-col items-center group">
+      <img
+        class='h-12 md:h-14 drop-shadow-lg group-hover:scale-105 transition-transform duration-300'
+        src='/images/logo.png'
+        alt='Landak Logo'
+      />
+    </a>
+  </div>
+
+  <ul class='hidden md:flex flex-wrap justify-center items-center gap-8 lg:gap-12'>
+    {
+      navLinks.map((link) => (
+        <li class='relative group'>
+          <a
+            href={link.href}
+            class='text-white/90 font-medium md:text-sm lg:text-base hover:text-white transition-colors py-2 block tracking-widest uppercase font-arsenal'
+          >
+            {link.name}
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-landak-light transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100 shadow-[0_0_8px_#82c75c]"></span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="hidden md:block">
+    <ContactButton className="!text-xs !px-5 !py-2.5 !mt-0 uppercase tracking-widest border-white/20 hover:border-white shadow-lg" />
+  </div>
+
+  <!-- Hamburger button (mobile) -->
+  <button
+    id="hamburger-btn"
+    aria-label="Abrir menú"
+    aria-expanded="false"
+    aria-controls="mobile-drawer"
+    class="md:hidden relative w-9 h-9 flex items-center justify-center text-white/90 hover:text-white transition-colors"
+    onclick="toggleMenu()"
+  >
+    <!-- Hamburger icon -->
+    <svg id="icon-open" class="w-6 h-6 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    <!-- Close icon -->
+    <svg id="icon-close" class="w-6 h-6 absolute transition-all duration-300 opacity-0 scale-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+</nav>
+
+<!-- Backdrop -->
+<div id="mobile-backdrop" class="mobile-backdrop" aria-hidden="true" onclick="toggleMenu()"></div>
+
+<!-- Mobile drawer (slides from right) -->
+<aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true" aria-label="Menú de navegación">
+  <div class="drawer-inner">
+
+    <!-- Header -->
+    <div class="drawer-header">
+      <img src='/images/logo.png' alt='Landak Logo' class="h-10 drop-shadow-lg" />
+      <button
+        aria-label="Cerrar menú"
+        class="close-btn"
+        onclick="toggleMenu()"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Links -->
+    <nav class="drawer-nav" aria-label="Menú principal">
+      <ul>
+        {navLinks.map((link, i) => (
+          <li style={`--i: ${i}`}>
+            <a href={link.href} class="drawer-link" onclick="toggleMenu()">
+              <span class="drawer-link-label">{link.name}</span>
+              <svg class="drawer-link-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Footer CTA -->
+    <div class="drawer-footer" onclick="toggleMenu()">
+      <ContactButton className="!w-full !justify-center !text-sm !mt-0 uppercase tracking-widest" />
+    </div>
+  </div>
+</aside>
+
+<script>
+  declare global {
+    interface Window {
+      toggleMenu: () => void;
+    }
+  }
+
+  const backdrop  = document.getElementById('mobile-backdrop') as HTMLElement;
+  const drawer    = document.getElementById('mobile-drawer') as HTMLElement;
+  const btn       = document.getElementById('hamburger-btn') as HTMLButtonElement;
+  const iconOpen  = document.getElementById('icon-open') as Element;
+  const iconClose = document.getElementById('icon-close') as Element;
+
+  window.toggleMenu = () => {
+    const isOpen = drawer.classList.toggle('is-open');
+
+    backdrop.classList.toggle('is-open', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+
+    btn.setAttribute('aria-expanded', String(isOpen));
+    drawer.setAttribute('aria-hidden', String(!isOpen));
+
+    iconOpen.classList.toggle('opacity-0', isOpen);
+    iconOpen.classList.toggle('scale-50', isOpen);
+    iconClose.classList.toggle('opacity-0', !isOpen);
+    iconClose.classList.toggle('scale-50', !isOpen);
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      window.toggleMenu();
+    }
+  });
+</script>

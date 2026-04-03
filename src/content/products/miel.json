@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "ML215",
+    "title": "Miel Pura landak 215",
+    "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
+    "category": "Miel",
+    "image_path": "ml-215",
+    "amount": "$20.000",
+    "available": true,
+    "cant": "215 gr"
+  },
+  {
+    "slug": "ML415",
+    "title": "Miel Pura landak 415",
+    "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
+    "category": "Miel",
+    "image_path": "ml-415",
+    "amount": "$30.000",
+    "available": true,
+    "cant": "415 gr"
+  },
+  {
+    "slug": "ML750",
+    "title": "Miel Pura landak 750",
+    "description": "Presentaciones disponibles en envase de vidrio premium, 100% nuevo y reutilizable con tapas y sellos libres de BPA",
+    "category": "Miel",
+    "image_path": "ml-750",
+    "amount": "$50.000",
+    "available": true,
+    "cant": "750 gr"
+  }
+]
