@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import heroImage from '@assets/images/hero.webp';
 import Nav from '@components/layout/Nav.astro';
 import ContactButton from '@components/ui/ContactButton.astro';
 import { SITE_CONFIG } from '@constants/index';
@@ -6,8 +8,17 @@ import { SITE_CONFIG } from '@constants/index';
 
 <header
   id="home"
-  class='relative bg-[url(/src/assets/images/hero.webp)] bg-cover bg-[65%_center] md:bg-[60%_center] h-[100vh] md:h-screen rounded-b-[3rem] overflow-hidden shadow-base transition-all duration-700 font-arsenal'
+  class='relative h-[100vh] md:h-screen rounded-b-[3rem] overflow-hidden shadow-base transition-all duration-700 font-arsenal'
 >
+  <!-- Main Hero Image (Optimized for LCP) -->
+  <Image 
+    src={heroImage} 
+    alt="Paisaje de Apiario Landak" 
+    class="absolute inset-0 w-full h-full object-cover object-[65%_center] md:object-[60%_center]"
+    loading="eager"
+    decoding="sync"
+    fetchpriority="high"
+  />
   {/* Desktop: gradient covers left 55%, fades before the product jar */}
   <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-landak-teal/95 via-landak-teal/70 to-transparent" style="background: linear-gradient(to right, #04303b 0%, rgba(4,48,59,0.80) 38%, rgba(4,48,59,0.30) 58%, transparent 72%);"></div>
 

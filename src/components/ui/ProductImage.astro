@@ -17,8 +17,10 @@ const img = !images[imagePath] ? defaultProduct : images[imagePath]();
 ---
 <Image
   src={img}
-  alt='product'
+  alt='Imagen de producto Apiario Landak'
   class:list={["flex", addClass]}
+  widths={[240, 480, 720, 1024]}
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   loading='lazy'
-  decoding='sync'
+  decoding='async'
 />
